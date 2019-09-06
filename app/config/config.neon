@@ -1,0 +1,25 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+    scenes: []
+
+extensions:
+    djktTheater: DJKT\Backstage\Modules\TheaterModule\TheaterExtension
+
+djktTheater:
+    scenes: %appDir%/config/theaterScenes.config.neon
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	catchExceptions: %productionMode%
+	errorPresenter: Common:Error
+	mapping:
+		*: DJKT\Backstage\Modules\*Module\Presenters\*Presenter
+
+services:
+    router: DJKT\Backstage\Routing\RouterFactory::create()

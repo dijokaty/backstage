@@ -1,0 +1,25 @@
+{
+  "name": "dijokaty/backstage",
+  "description": "Administration application for DJKT Theater rating app",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Štěpán Ševčík",
+      "email": "Thoronir42@Gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.3",
+    "nette/application": "^3.0",
+    "nette/di": "^3.0",
+    "tracy/tracy": "^2.6",
+    "nette/bootstrap": "^3.0",
+    "latte/latte": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DJKT\\Backstage\\": "app/"
+    }
+  }
+}
