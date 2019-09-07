@@ -7,9 +7,13 @@ parameters:
 
 extensions:
     djktTheater: DJKT\Backstage\Modules\TheaterModule\TheaterExtension
+    djktRating: DJKT\Backstage\Modules\RatingModule\RatingExtension
 
 djktTheater:
     scenes: %appDir%/config/theaterScenes.config.neon
+
+djktRating:
+    baseUrl: %ratingsApiBaseUrl%
 
 php:
 	date.timezone: Europe/Prague

@@ -21,7 +21,7 @@ class RouterFactory
 
     private static function createRatingKioskRouter(): Router
     {
-        $router = new RouteList('RatingKiosk');
+        $router = new RouteList('Rating');
         $router[] = new Route('kiosk[/]', 'Kiosk:listScenes');
         $router[] = new Route('kiosk/<sceneId>[/]', 'Kiosk:display');
 

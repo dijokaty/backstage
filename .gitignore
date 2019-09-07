@@ -1,5 +1,11 @@
+# backend stuff
 /vendor/
 /temp/
 /log/
 
 app/config/local.config.neon
+
+# frontend stuff
+/node_modules/
+/www/dist/
+/www/vendor/

@@ -1,0 +1,31 @@
+$ratingBtnSize: 87px;
+
+.play-prompt {
+  font-size: 3em;
+  color: #777;
+}
+.play-caption {
+  font-size: 1.1em;
+  color: #000;
+}
+
+.rating-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.rating-btn {
+  display: block;
+  width: $ratingBtnSize;
+  height: $ratingBtnSize;
+  background: url('/img/emotion-feedback.png') no-repeat;
+}
+
+@for $i from 1 through 5 {
+  .rating-btn-#{$i} {
+    background-position: -100px -(80px + ($i - 2) * 101px);
+    //background-size: 68px 81px;
+  }
+}
+

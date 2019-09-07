@@ -1,0 +1,2 @@
+parameters:
+    ratingsApiBaseUrl: http://djkt.test/api/
