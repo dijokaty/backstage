@@ -9,10 +9,13 @@ class Ratings
 {
     /** @var string */
     private $client;
+    /** @var array */
+    private $flavourTexts;
 
-    public function __construct(RestAdapter $rest)
+    public function __construct(RestAdapter $rest, $flavourTexts = [])
     {
         $this->client = $rest;
+        $this->flavourTexts = $flavourTexts;
     }
 
     public function getRatingValues()
@@ -36,4 +39,15 @@ class Ratings
             'result' => $result,
         ];
     }
+
+    public function getFlavourText(int $ratingValue): string
+    {
+        $collection = $this->flavourTexts[$ratingValue] ?? null;
+        if ($collection) {
+            return $collection[rand() % count($collection)];
+        }
+
+        return 'Děkujeme za váš názor!';
+    }
+
 }

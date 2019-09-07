@@ -13,7 +13,20 @@ djktTheater:
     scenes: %appDir%/config/theaterScenes.config.neon
 
 djktRating:
-    baseUrl: %ratingsApiBaseUrl%
+    flavourTexts:
+        1:
+            - "Přejeme vám v budoucnu více štěstí při výběru představení"
+            - "Mrzí nás, že se rozešlo naše představení s vaším očekáváním"
+        3:
+            - "Možná lze dílo interpretovat jiným způsobem"
+        4:
+            - "Děkujeme :)"
+            - "Rádi se s vámi znovu uvidíme"
+        5:
+            - "Vivat divadlo!"
+            - "Přijďte se na nás brzy podívat znovu"
+            - "Těšíme se na vaši další návštěvu"
+
 
 php:
 	date.timezone: Europe/Prague

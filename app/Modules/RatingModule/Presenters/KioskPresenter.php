@@ -33,7 +33,7 @@ class KioskPresenter extends Presenter
             $this->redirect('listScenes');
         }
 
-        $this->template->navScene = $scene;
+        $this->template->scene = $scene;
 
         $this->template->play = $this->plays->getPlayForStage($scene->getTitle());
 
@@ -47,7 +47,7 @@ class KioskPresenter extends Presenter
         if ($result['success']) {
             $this->sendJson([
                 'status' => 'success',
-                'alert' => 'Děkujeme za váš názor!'
+                'alert' => $this->ratings->getFlavourText($score),
             ]);
         }
 
