@@ -27,3 +27,11 @@ application:
 
 services:
     router: DJKT\Backstage\Routing\RouterFactory::create()
+
+    restClient:
+         class: GuzzleHttp\Client
+         arguments:
+             config:
+                 base_uri: %ratingsApiBaseUrl%
+
+    restAdapter: DJKT\Backstage\Modules\CommonModule\Rest\RestAdapter(@restClient)

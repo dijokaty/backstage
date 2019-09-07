@@ -3,6 +3,7 @@
 namespace DJKT\Backstage\Modules\TheaterModule;
 
 
+use DJKT\Backstage\Modules\TheaterModule\Model\Plays;
 use DJKT\Backstage\Modules\TheaterModule\Model\Scenes;
 use Nette\DI\CompilerExtension;
 use Nette\Neon\Neon;
@@ -29,6 +30,9 @@ class TheaterExtension extends CompilerExtension
         $builder->addDefinition($this->prefix('scenes'))
             ->setType(Scenes::class)
             ->setArgument('model', $scenes);
+
+        $builder->addDefinition($this->prefix('plays'))
+            ->setType(Plays::class);
 
     }
 }

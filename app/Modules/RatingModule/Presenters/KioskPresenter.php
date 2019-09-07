@@ -4,6 +4,7 @@ namespace DJKT\Backstage\Modules\RatingModule\Presenters;
 
 
 use DJKT\Backstage\Modules\RatingModule\Model\Ratings;
+use DJKT\Backstage\Modules\TheaterModule\Model\Plays;
 use DJKT\Backstage\Modules\TheaterModule\Model\Scenes;
 use Nette\Application\UI\Presenter;
 
@@ -12,6 +13,9 @@ class KioskPresenter extends Presenter
 
     /** @var Scenes @inject */
     public $scenes;
+
+    /** @var Plays @inject */
+    public $plays;
 
     /** @var Ratings @inject */
     public $ratings;
@@ -31,9 +35,7 @@ class KioskPresenter extends Presenter
 
         $this->template->navScene = $scene;
 
-        $this->template->play = [
-            'caption' => 'Kytice',
-        ];
+        $this->template->play = $this->plays->getPlayForStage($scene->getTitle());
 
         $this->template->ratingOptions = $this->ratings->getRatingValues();
     }
