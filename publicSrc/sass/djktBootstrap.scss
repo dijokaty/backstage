@@ -1,7 +1,6 @@
-$body-bg: #ddd;
-
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./bootstrap/layout";
 @import "./bootstrap/navbar";
-@import "./bootstrap/rating";
+@import "./backstage/rating";
+@import "./bootstrap/btn";
 

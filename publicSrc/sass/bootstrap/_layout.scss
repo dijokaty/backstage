@@ -1,8 +1,15 @@
 body {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
 }
+#body-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background: url("/img/podklad_web_prechod.jpg") top center;
+  background-size: cover;
+}
+
 #content-body {
   flex: 1;
 }

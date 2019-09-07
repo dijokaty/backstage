@@ -19,7 +19,6 @@ class KioskPresenter extends Presenter
     public function renderListScenes()
     {
         $this->template->scenes = $this->scenes->getScenes();
-        $this->template->scene = $this->scenes->getScene('mala-scena');
     }
 
     public function renderDisplay(string $sceneId)
@@ -30,10 +29,10 @@ class KioskPresenter extends Presenter
             $this->redirect('listScenes');
         }
 
-        $this->template->scene = $scene;
+        $this->template->navScene = $scene;
 
         $this->template->play = [
-            'caption' => 'Polednice',
+            'caption' => 'Kytice',
         ];
 
         $this->template->ratingOptions = $this->ratings->getRatingValues();

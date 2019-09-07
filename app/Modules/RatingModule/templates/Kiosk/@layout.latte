@@ -11,11 +11,12 @@
     <title>Hello, world!</title>
 </head>
 <body>
-{include '_navbar.latte'}
-<div class="container-fluid" id="content-body">
-    {include #content}
+<div id="body-wrapper">
+    {include '_navbar.latte'}
+    <div class="container-fluid" id="content-body">
+        {include #content}
+    </div>
 </div>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

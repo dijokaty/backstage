@@ -1,12 +1,15 @@
-$ratingBtnSize: 87px;
+$ratingBtnSize: 166px;
 
+.rating-prompt {
+  margin-bottom: 2em;
+}
 .play-prompt {
   font-size: 3em;
-  color: #777;
+  color: #BBB;
 }
 .play-caption {
   font-size: 1.1em;
-  color: #000;
+  color: #FFF;
 }
 
 .rating-buttons {
@@ -19,13 +22,16 @@ $ratingBtnSize: 87px;
   display: block;
   width: $ratingBtnSize;
   height: $ratingBtnSize;
-  background: url('/img/emotion-feedback.png') no-repeat;
+
+  padding: 0.40em;
+  border-radius: 10px;
 }
 
 @for $i from 1 through 5 {
   .rating-btn-#{$i} {
-    background-position: -100px -(80px + ($i - 2) * 101px);
-    //background-size: 68px 81px;
+    background: url('/img/feedback/#{$i}.png') center no-repeat;
+    background-size: contain;
+    background-origin: content-box;
   }
 }
 

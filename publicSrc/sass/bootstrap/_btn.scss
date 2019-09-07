@@ -1,0 +1,7 @@
+@import "../../../node_modules/bootstrap/scss/utilities/shadows";
+
+.btn-glass {
+  background-color: rgba(200, 200, 200, 1);
+  @extend .shadow-lg;
+
+}

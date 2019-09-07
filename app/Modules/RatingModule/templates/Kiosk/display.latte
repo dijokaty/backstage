@@ -1,12 +1,15 @@
 {block content}
 <div class="row h-100">
-    <div class="col-8 offset-2 my-auto">
-        <span class="play-prompt">Jak se vám líbila hra <span class="play-caption">{$play['caption']}</span></span>
-
+    <div class="col-8 offset-2 mt-auto mb-4">
+        <div class="rating-prompt">
+            <span class="play-prompt">Jak se vám líbila hra <span class="play-caption">{$play['caption']}</span>?</span>
+        </div>
+    </div>
+    <div class="col-10 offset-1">
         <div class="mx-auto card card-rating">
             <div class="card-body">
                 <div class="rating-buttons">
-                    <a class="btn btn-secondary rating-btn rating-btn-{$ratingScore}"
+                    <a class="btn btn-glass rating-btn rating-btn-{$ratingScore}"
                             n:href="rate! $ratingScore"
                             n:foreach="$ratingOptions as $ratingScore"></a>
                 </div>
