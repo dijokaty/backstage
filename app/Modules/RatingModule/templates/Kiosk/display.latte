@@ -1,16 +1,23 @@
+{block styles}
+    <style>
+        #body-wrapper {
+            background-image: url("{$basePath}/img/bg-{$scene->getId()}.jpg");
+        }
+    </style>
+
+{/block}
+
 {block content}
-<div class="row h-100">
-    <div class="col-8 offset-2 mt-auto mb-4">
-        <div class="rating-prompt">
-            <span class="play-prompt">Jak se vám líbila hra</span><br/>
-            <span class="play-caption">{$play->getTitle()}</span>
-        </div>
-    </div>
-    <div class="col-10 offset-1">
-        <div class="mx-auto card card-rating">
-            <div class="card-body">
+<div id="rating-wrapper">
+    <div class="card card-rating">
+        <div class="card-body pt-5">
+            <div class="rating-prompt">
+                <span class="play-prompt">Jak se vám líbila hra</span><br/>
+                <span class="play-caption">{$play->getTitle()}</span>
+            </div>
+            <div>
                 <div class="rating-buttons">
-                    <a class="ajax btn btn-glass rating-btn rating-btn-{$ratingScore}"
+                    <a class="ajax btn btn-rating rating-btn rating-btn-{$ratingScore}"
                             n:href="rate! $ratingScore"
                             n:foreach="$ratingOptions as $ratingScore"></a>
                 </div>

@@ -12,6 +12,11 @@ class Play
         $this->data = $data;
     }
 
+    public function getId(): string
+    {
+        return $this->data['_id'];
+    }
+
     public function getTitle(): string
     {
         return $this->data['title'];

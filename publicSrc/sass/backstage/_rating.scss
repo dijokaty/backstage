@@ -1,21 +1,39 @@
-$ratingBtnSize: 166px;
+$ratingBtnSize: 200px;
+
+#rating-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .rating-prompt {
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 .play-prompt {
-  font-size: 3em;
+  font-size: 2.8em;
   color: #BBB;
 }
 .play-caption {
   font-size: 3.5em;
   color: #FFF;
 }
+.play-caption::before {
+  content: '  ';
+}
+
+.card-rating {
+  background-color: rgba(42, 42, 42, 0.85);
+  > .card-body {
+    margin: 2em 2em 4em;
+  }
+}
 
 .rating-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  background: transparent;
 }
 
 .rating-btn {
@@ -23,13 +41,15 @@ $ratingBtnSize: 166px;
   width: $ratingBtnSize;
   height: $ratingBtnSize;
 
-  padding: 0.40em;
-  border-radius: 10px;
+  border: 2px solid dimgray;
+
+  padding: 0.8em;
+  border-radius: 120px;
 }
 
 @for $i from 1 through 5 {
   .rating-btn-#{$i} {
-    background: url('/img/feedback/#{$i}.png') center no-repeat;
+    background: url('/img/feedback/#{$i}.png') center no-repeat, rgba(100, 100, 100, 0.6);
     background-size: contain;
     background-origin: content-box;
   }

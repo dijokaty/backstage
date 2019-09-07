@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="{$basePath}/img/djkt-logo.png">
+        <img src="{$basePath}/img/djkt-logo-light.png">
     </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div n:ifset="$scene" class="nav-scene mx-auto">
-            Scéna: <b>{$scene->getTitle()}</b>
+            {$scene->getTitle()}
         </div>
         <div id="navbar-date-time">
             <span class="nav-date">2019-09-07</span>
