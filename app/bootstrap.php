@@ -25,9 +25,10 @@ return call_user_func(static function () {
     $configurator->setTempDirectory(dirname(__DIR__) . '/temp');
 
     $configurator->addConfig(__DIR__ . '/config/config.neon');
-    $configFile = getenv('CONFIG_FILE') ?: 'config.local.neon';
+    $configFile = getenv('CONFIG_FILE') ?: 'local.config.neon';
     $configurator->addConfig(__DIR__ . '/config/' . $configFile);
 
     $container = $configurator->createContainer();
+
     return $container;
 });
