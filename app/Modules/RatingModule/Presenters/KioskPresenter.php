@@ -38,10 +38,20 @@ class KioskPresenter extends Presenter
         $this->template->ratingOptions = $this->ratings->getRatingValues();
     }
 
-    public function handleRate($score)
+    public function handleRate(int $score)
     {
+        $result = $this->ratings->submitRating('5d6d21153b70bd774cf05743', $score);
+
+        if ($result['success']) {
+            $this->sendJson([
+                'status' => 'success',
+                'alert' => 'Děkujeme za váš názor!'
+            ]);
+        }
+
         $this->sendJson([
-            'alert' => 'non',
+            'status' => 'error',
+            'alert' => 'Něco se pokazilo',
         ]);
     }
 }
