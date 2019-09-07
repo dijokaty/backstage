@@ -2,7 +2,15 @@
     $.nette.ext('djktAlerts', {
         success: function (response) {
             if (response.alert) {
-                console.log(getResponseClass(response), response.alert);
+                createToastElement('Hodnocení přijato', response.alert)
+                    .then(function($toast) {
+                        let $toasts = $('#toasts');
+                        $toasts.append($toast);
+                        $toast.toast('show', {delay: 1000});
+                        $toast.on('hidden.bs.toast', function () {
+                            $toast.remove();
+                        });
+                    });
             }
         }
     });
@@ -16,5 +24,21 @@
         }
 
         return 'info';
+    }
+
+    let toastTemplatePromise = fetch('/templates/toast.html')
+        .then(function (response) {
+            return response.text();
+        });
+
+    function createToastElement(title, body) {
+        return toastTemplatePromise
+            .then(function (template) {
+                let html = template
+                    .replace('{{ title }}', title)
+                    .replace('{{ body }}', body);
+
+                return $(html);
+            });
     }
 })();
