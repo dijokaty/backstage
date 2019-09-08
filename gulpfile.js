@@ -33,10 +33,7 @@ gulp.task('js:dist', () => {
     ])
         .pipe(dest('www/dist/js'));
 });
-gulp.task('js', () => {
-    return gulp.task('js:vendor')
-        .then(() => gulp.task('js:dist'));
-});
+gulp.task('js', gulp.series(['js:vendor', 'js:dist']));
 
 gulp.task('js:watch', () => {
     gulp.watch([

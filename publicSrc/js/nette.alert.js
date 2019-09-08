@@ -1,17 +1,28 @@
 (function () {
     $.nette.ext('djktAlerts', {
         success: function (response) {
-            if (response.alert) {
-                createToastElement('Hodnocení přijato', response.alert)
-                    .then(function($toast) {
-                        let $toasts = $('#toasts');
-                        $toasts.append($toast);
-                        $toast.toast('show', {delay: 1000});
-                        $toast.on('hidden.bs.toast', function () {
-                            $toast.remove();
-                        });
+            let $areaEl = $('#rating-area');
+            let $thanksEl = $areaEl.find('.rating-thanks');
+            $thanksEl.html(response.alert || "Děkujeme");
+
+            $areaEl.animate({
+                scrollTop: $thanksEl.offset().top,
+            }, 250);
+            setTimeout(function () {
+                $areaEl.animate({
+                    scrollTop: 0,
+                }, 250);
+            }, 1000);
+
+            /*createToastElement('Hodnocení přijato', response.alert)
+                .then(function ($toast) {
+                    let $toasts = $('#toasts');
+                    $toasts.append($toast);
+                    $toast.toast('show', {delay: 1000});
+                    $toast.on('hidden.bs.toast', function () {
+                        $toast.remove();
                     });
-            }
+                });*/
         }
     });
 

@@ -29,7 +29,28 @@ $ratingBtnSize: 200px;
   }
 }
 
+#rating-area {
+  height: $ratingBtnSize;
+  overflow: hidden;
+
+  transition: padding-top 0.1s;
+
+  .rating-thanks {
+    height: $ratingBtnSize;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #FFF;
+    background: rgba(42, 42, 42, 0.75);
+    font-size: 2em;
+  }
+}
+
 .rating-buttons {
+  position: sticky;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

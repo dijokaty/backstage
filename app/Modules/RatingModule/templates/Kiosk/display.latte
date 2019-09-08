@@ -15,12 +15,13 @@
                 <span class="play-prompt">Jak se vám líbila hra</span><br/>
                 <span class="play-caption">{$play->getTitle()}</span>
             </div>
-            <div>
+            <div id="rating-area">
                 <div class="rating-buttons">
                     <a class="ajax btn btn-rating rating-btn rating-btn-{$ratingScore}"
                             n:href="rate! $ratingScore"
                             n:foreach="$ratingOptions as $ratingScore"></a>
                 </div>
+                <div class="rating-thanks">Hello</div>
             </div>
         </div>
     </div>
