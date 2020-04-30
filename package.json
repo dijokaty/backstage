@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "nette.ajax.js": "https://github.com/vojtech-dobes/nette.ajax.js",
     "popper.js": "^1.15.0"
   },
